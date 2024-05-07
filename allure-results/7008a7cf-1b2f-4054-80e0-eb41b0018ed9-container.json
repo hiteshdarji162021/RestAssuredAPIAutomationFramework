@@ -1,0 +1,1 @@
+{"uuid":"7008a7cf-1b2f-4054-80e0-eb41b0018ed9","name":"Go Rest API Test","children":["36668b81-5237-4e9f-8be1-28354ac92746"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1715086642294,"stop":1715086642812}],"afters":[],"start":1715086642276,"stop":1715086645446}

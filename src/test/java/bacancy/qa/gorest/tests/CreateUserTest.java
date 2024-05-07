@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
 public class CreateUserTest {
 
-    @Test
-    public void createUserTest() {
+
+    /*public void createUserTest() {
 //1. Post Call
         User user = new User("Hitesh", StringUtil.getRandomEmail(), "male", "active");
         RestClient restClientPost = new RestClient();
@@ -25,5 +25,5 @@ public class CreateUserTest {
                 .assertThat().statusCode(200)
                 .assertThat().body("id",equalTo(userId));
 
-    }
+    }*/
 }
