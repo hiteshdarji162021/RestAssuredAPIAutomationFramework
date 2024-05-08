@@ -1,0 +1,1 @@
+{"uuid":"23c330ed-d89d-45cc-9a1d-d83d1f1e9f4c","name":"API Schema Test","children":["e0171bd7-3100-4152-994b-317dabc9e574"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1715168676547,"stop":1715168676549}],"afters":[],"start":1715168676545,"stop":1715168677395}

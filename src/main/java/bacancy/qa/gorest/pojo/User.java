@@ -29,10 +29,10 @@ public class User {
     @JsonProperty("status")
     private String status;
 
-    public User(String name,String email,String gender, String status){
-        this.name=name;
-        this.email=email;
-        this.gender= gender;
-        this.status=status;
+    public User(String name, String email, String gender, String status) {
+        this.name = name;
+        this.email = email;
+        this.gender = gender;
+        this.status = status;
     }
 }

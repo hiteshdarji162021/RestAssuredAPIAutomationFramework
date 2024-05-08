@@ -10,15 +10,24 @@ import org.testng.annotations.Parameters;
 import java.util.Properties;
 
 public class BaseTest {
-protected ConfigrationManager configrationManager;
-protected  Properties properties;
-protected RestClient restClient;
+    //Service URLs
+    public static final String GOREST_ENDPOINT = "/public/v2/users";
+    public static final String REQRES_ENDPOINT = "/api/users";
+    public static final String CIRCUIT_ENDPOINT = "/api/f1";
+    public static final String AMUDESUS_TOKEN_ENDPOINT = "/v1/security/oauth2/token";
+    public static final String AMUDESUS_FLIGHTBOOKING_ENDPOINT = "/v1/shopping/flight-destinations";
+
+    protected ConfigrationManager configrationManager;
+    protected Properties properties;
+    protected RestClient restClient;
+    protected String baseURI;
+
     @Parameters({"baseURI"})
     @BeforeTest
     public void setUp(String baseURI) {
         RestAssured.filters(new AllureRestAssured());
         configrationManager = new ConfigrationManager();
         properties = configrationManager.initProp();
-        restClient = new RestClient(properties,baseURI);
+        this.baseURI = baseURI;
     }
 }

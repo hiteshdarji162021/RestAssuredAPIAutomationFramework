@@ -2,6 +2,8 @@ package bacancy.qa.gorest.tests;
 
 import bacancy.qa.gorest.base.BaseTest;
 import bacancy.qa.gorest.client.RestClient;
+import bacancy.qa.gorest.constants.APIHttpStatus;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
@@ -11,28 +13,35 @@ import static org.hamcrest.Matchers.*;
 
 public class GetUserTest extends BaseTest {
 
+    @BeforeMethod
+    public void getUserSetup() {
+        restClient = new RestClient(properties,baseURI);
+    }
+
     @Test
     public void getAllUsersTest() {
 
-        restClient.get("/public/v2/users",true,true)
+        restClient.get(GOREST_ENDPOINT,true,true)
                 .then().log().all()
-                .assertThat().statusCode(200);
+                .assertThat().statusCode(APIHttpStatus.OK_200.getCode());
     }
-   /* @Test(enabled = true)
+
+    @Test
     public void getUserTest() {
 
-        restClient.get("/public/v2/users/6891922",true)
+        restClient.get(GOREST_ENDPOINT+"/6891922",true,true)
                 .then().log().all()
-                .assertThat().statusCode(200)
+                .assertThat().statusCode(APIHttpStatus.OK_200.getCode())
                 .and().body("id",equalTo(6891922));
-    }*/
-  /*  @Test
+    }
+
+    @Test
     public void getUserwithQueryParams() {
-        Map<String,String> queryParamas= new HashMap<String, String>();
+        Map<String, Object> queryParamas= new HashMap<String, Object>();
         queryParamas.put("name","naveen");
         queryParamas.put("status","active");
-        restClient.get("/public/v2/users",null,queryParamas,false)
+        restClient.get(GOREST_ENDPOINT,null,queryParamas,true,false)
                 .then().log().all()
-                .assertThat().statusCode(200);
-    }*/
+                .assertThat().statusCode(APIHttpStatus.OK_200.getCode());
+    }
 }
