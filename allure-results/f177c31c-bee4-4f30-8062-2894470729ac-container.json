@@ -1,1 +1,0 @@
-{"uuid":"f177c31c-bee4-4f30-8062-2894470729ac","name":"Amadeus Flight API Test","children":["794c6b6d-dd7a-4a92-a738-812a4a4e6863"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1715168646811,"stop":1715168647480}],"afters":[],"start":1715168646761,"stop":1715168659644}
