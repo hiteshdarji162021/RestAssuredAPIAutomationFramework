@@ -10,13 +10,13 @@ public class ReqResAPITest extends BaseTest {
 
     @BeforeMethod
     public void createUserSetup() {
-        restClient = new RestClient(properties,baseURI);
+        restClient = new RestClient(properties, baseURI);
     }
 
     @Test
     public void getReqResest() {
 
-        restClient.get(REQRES_ENDPOINT+"/2", true, true)
+        restClient.get(REQRES_ENDPOINT + "/2", true, true)
                 .then().log().all()
                 .assertThat().statusCode(APIHttpStatus.OK_200.getCode());
     }

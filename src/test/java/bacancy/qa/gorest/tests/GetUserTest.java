@@ -15,13 +15,13 @@ public class GetUserTest extends BaseTest {
 
     @BeforeMethod
     public void getUserSetup() {
-        restClient = new RestClient(properties,baseURI);
+        restClient = new RestClient(properties, baseURI);
     }
 
     @Test
     public void getAllUsersTest() {
 
-        restClient.get(GOREST_ENDPOINT,true,true)
+        restClient.get(GOREST_ENDPOINT, true, true)
                 .then().log().all()
                 .assertThat().statusCode(APIHttpStatus.OK_200.getCode());
     }
@@ -29,18 +29,18 @@ public class GetUserTest extends BaseTest {
     @Test
     public void getUserTest() {
 
-        restClient.get(GOREST_ENDPOINT+"/6891922",true,true)
+        restClient.get(GOREST_ENDPOINT + "/6891922", true, true)
                 .then().log().all()
                 .assertThat().statusCode(APIHttpStatus.OK_200.getCode())
-                .and().body("id",equalTo(6891922));
+                .and().body("id", equalTo(6891922));
     }
 
     @Test
     public void getUserwithQueryParams() {
-        Map<String, Object> queryParamas= new HashMap<String, Object>();
-        queryParamas.put("name","naveen");
-        queryParamas.put("status","active");
-        restClient.get(GOREST_ENDPOINT,null,queryParamas,true,false)
+        Map<String, Object> queryParamas = new HashMap<String, Object>();
+        queryParamas.put("name", "naveen");
+        queryParamas.put("status", "active");
+        restClient.get(GOREST_ENDPOINT, null, queryParamas, true, false)
                 .then().log().all()
                 .assertThat().statusCode(APIHttpStatus.OK_200.getCode());
     }

@@ -2,9 +2,11 @@ package bacancy.qa.gorest.tests;
 
 import bacancy.qa.gorest.base.BaseTest;
 import bacancy.qa.gorest.client.RestClient;
+import bacancy.qa.gorest.constants.APIConstants;
 import bacancy.qa.gorest.constants.APIHttpStatus;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -43,5 +45,6 @@ public class AmadeusAPITest extends BaseTest {
         JsonPath js = flightDataResponse.jsonPath();
         String type = js.get("data[0].type");
         System.out.println(type);
+        Assert.assertEquals(type, APIConstants.AMADEUS_FLIGHT_TYPE);
     }
 }
