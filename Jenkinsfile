@@ -6,18 +6,11 @@ pipeline {
     }
 
     stages {
-         /*  stage('Build') {
+          stage('Developer Build') {
             steps {
-                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                bat 'mvn -Dmaven.test.failure.ignore=true clean package'
+                echo ('Develper Build done')
             }
-            post {
-                success {
-                    junit '**//*  *//*  *//*  *//* target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target *//*  *//*  *//*  *//*.jar'
-                }
-            }
-        } */
+        }
 
         stage('Deploy to QA') {
             steps {
