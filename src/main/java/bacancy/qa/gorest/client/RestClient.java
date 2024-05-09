@@ -222,6 +222,7 @@ public class RestClient {
                 .delete(serviceUrl);
     }
 
+    //Auth 2.0 method
     public String getAccessToken(String serviceURL, String grantType, String clientId, String clientSecret) {
         RestAssured.baseURI = "https://test.api.amadeus.com";
         String accessToken = given().log().all()

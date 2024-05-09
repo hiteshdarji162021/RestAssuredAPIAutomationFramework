@@ -44,7 +44,7 @@ public class AmadeusAPITest extends BaseTest {
                 .response();
         JsonPath js = flightDataResponse.jsonPath();
         String type = js.get("data[0].type");
-        System.out.println(type);
+        System.out.println("type is-->"+type);
         Assert.assertEquals(type, APIConstants.AMADEUS_FLIGHT_TYPE);
     }
 }
