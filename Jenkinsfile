@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git url: 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                git 'https://github.com/jglick/simple-maven-project-with-tests.git'
                 sh 'mvn -Dmaven.test.failure.ignore=true clean package'
             }
             post {
@@ -21,14 +21,14 @@ pipeline {
 
         stage('Deploy to QA') {
             steps {
-                echo 'Deploying to QA...'
+                echo ('Deploying to QA done')
             }
         }
 
-        stage('Regression Automation Test') {
+        stage('Regression API Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git url: 'https://github.com/hiteshdarji162021/RestAssuredAPIAutomationFramework.git'
+                    git 'https://github.com/hiteshdarji162021/RestAssuredAPIAutomationFramework.git'
                     sh 'mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regression.xml'
                 }
             }
@@ -56,7 +56,7 @@ pipeline {
                     keepAll: true,
                     reportDir: 'reports',
                     reportFiles: 'TestExecutionReport.html',
-                    reportName: 'HTML Regression Extent Report',
+                    reportName: 'API HTML Regression Extent Report',
                     reportTitles: ''
                 ])
             }
@@ -64,14 +64,14 @@ pipeline {
 
         stage('Deploy to Stage') {
             steps {
-                echo 'Deploying to Stage...'
+                echo ("Deploying to Stage...")
             }
         }
 
         stage('Sanity Automation Test') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    git url: 'https://github.com/hiteshdarji162021/RestAssuredAPIAutomationFramework.git'
+                    git 'https://github.com/hiteshdarji162021/RestAssuredAPIAutomationFramework.git'
                     sh 'mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_sanity.xml'
                 }
             }
