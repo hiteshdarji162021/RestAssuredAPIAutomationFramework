@@ -1,6 +1,7 @@
 package bacancy.qa.gorest.utils;
 
 import bacancy.qa.gorest.frameworkexception.ApiFrameworkException;
+import bacancy.qa.gorest.pojo.User;
 import com.jayway.jsonpath.JsonPath;
 import io.restassured.response.Response;
 

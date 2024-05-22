@@ -8,7 +8,7 @@ public enum APIHttpStatus {
     BAD_REQUEST_400(400, "Bad Request"),
     UNAUTHORIZED_401(401, "Unauthorized"),
     FORBIDDEN_403(403, "Forbidden"),
-    NOTFOUND(404, "Not Found"),
+    NOTFOUND_404(404, "Not Found"),
     INTERNAL_SERVER_ERROR(500, "Internal Server Error");
 
     private final int code;

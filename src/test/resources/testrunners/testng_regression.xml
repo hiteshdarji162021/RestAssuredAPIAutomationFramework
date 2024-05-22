@@ -26,10 +26,24 @@
         </classes>
     </test>
 
+    <test name="Go Rest API Put Test">
+        <parameter name="baseURI" value="https://gorest.co.in"></parameter>
+        <classes>
+            <class name="bacancy.qa.gorest.tests.PutUserTest"/>
+        </classes>
+    </test>
+
+    <test name="Go Rest API Delete User Test">
+        <parameter name="baseURI" value="https://gorest.co.in"></parameter>
+        <classes>
+            <class name="bacancy.qa.gorest.tests.DeleteUserTest"/>
+        </classes>
+    </test>
+
     <test name="Go Rest API Create User Test">
         <parameter name="baseURI" value="https://gorest.co.in"></parameter>
         <classes>
-            <class name="bacancy.qa.gorest.tests.CreateUserTest"/>
+            <class name="bacancy.qa.gorest.tests.PostUserTest"/>
         </classes>
     </test>
 
